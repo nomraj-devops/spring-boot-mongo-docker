@@ -1,1 +1,19 @@
+name: Run Commands Example
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run custom commands
+        run: |
+          echo "Hello from GitHub Actions!"
+          ls -al
+          pwd
 
